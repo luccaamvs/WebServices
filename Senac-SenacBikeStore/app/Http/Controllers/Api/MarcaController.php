@@ -16,12 +16,12 @@ class MarcaController extends Controller
      */
     public function index()
     {
-        $marcas = Marca::all();
+        $marca = Marca::all();
 
         return response()->json([
             'status' => 200,
             'mensagem' => 'Lista de Marcas retornada',
-            'marcas' => MarcaResource::collection($marcas)
+            'marcas' => MarcaResource::collection($marca)
         ], 200);
     }
 
@@ -55,7 +55,7 @@ class MarcaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Marcas $marcas)
+    public function show(Marca $marca)
     {
         //
     }
@@ -63,7 +63,7 @@ class MarcaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Marcas $marcas)
+    public function edit(Marca $marca)
     {
         //
     }
@@ -71,7 +71,7 @@ class MarcaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreMarcaRequest $request, Marcas $marcas)
+    public function update(StoreMarcaRequest $request, Marca $marca)
     {
         $marca = Marca::find($marca->pkmarca);
         $marca->nomedamarca = $request->nome_da_marca;
