@@ -29,4 +29,8 @@ route::apiResource('marcas', MarcaController::class);
 
 //Produtos
 route::apiResource('produtos', ProdutoController::class);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 03-04-ComFiltroPaginacaoeOrdem
 

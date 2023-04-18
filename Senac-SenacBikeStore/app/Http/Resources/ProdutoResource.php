@@ -18,7 +18,10 @@ class ProdutoResource extends JsonResource
             'id' => $this->pkproduto,
             'nome_do_produto' => $this->nomedoproduto,
             'preco_de_lista' => $this->precodelista,
+<<<<<<< HEAD
             'moeda' => 'USD',
+=======
+>>>>>>> 03-04-ComFiltroPaginacaoeOrdem
             'categoria' => [
                 'id' => $this->categoria->pkcategoria,
                 'nome_da_categoria' => $this->categoria->nomedacategoria
@@ -29,4 +32,8 @@ class ProdutoResource extends JsonResource
             ]
         ];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 03-04-ComFiltroPaginacaoeOrdem
