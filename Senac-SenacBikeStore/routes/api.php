@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CategoriaController;
 use App\Http\Controllers\Api\MarcaController;
 use App\Http\Controllers\Api\ProdutoController;
+use App\Http\Controllers\Api\PassportAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,20 @@ use App\Http\Controllers\Api\ProdutoController;
 |
 */
 
+//Ropa para Seguranca do Usuario
+
+Route::post('register', [PassportAuthController::class, 'register']);
+Route::post('login', [PassportAuthController::class, 'login']);
+Route::post('logout', [PassportAuthController::class, 'logout'])->middleware('auth:api');
+Route::get('user', [PassportAuthController::class, 'userInfo'])->middleware('auth:api');
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 //Categorias
-route::apiResource('categorias', CategoriaController::class);
+route::apiResource('categorias', CategoriaController::class)->middleware('auth:api');
 
 //Marcas
 route::apiResource('marcas', MarcaController::class);
