@@ -100,7 +100,7 @@ class CategoriaController extends Controller
      */
     public function show(Categoria $categoria)
     {
-        //
+        //Texto exemplo
     }
 
     /**
